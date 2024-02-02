@@ -268,3 +268,4 @@ C:\Users\Eduar\Documents\Projetos\C#\WebJokes\WebJokes\bin\Debug\net8.0\WebJokes
 C:\Users\Eduar\Documents\Projetos\C#\WebJokes\WebJokes\bin\Debug\net8.0\WebJokes.pdb
 C:\Users\Eduar\Documents\Projetos\C#\WebJokes\WebJokes\obj\Debug\net8.0\WebJokes.genruntimeconfig.cache
 C:\Users\Eduar\Documents\Projetos\C#\WebJokes\WebJokes\obj\Debug\net8.0\ref\WebJokes.dll
+C:\Users\Eduar\Documents\Projetos\C#\WebJokes\WebJokes\obj\Debug\net8.0\WebJokes.sourcelink.json
