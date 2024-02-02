@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -31,9 +32,10 @@ namespace WebJokes.Controllers
             return View("SearchForm");
         }
         // POST: SearchResults/phrase
-        public String SearchResults(String searchPhrase)
+        public async Task<IActionResult> SearchResults(String searchPhrase)
         {
-            return "All right: " + searchPhrase;
+            return View("Index", await _context.Joke.Where(
+                j=> j.Question.Contains(searchPhrase)).ToListAsync());
         }
 
         // GET: Jokes/Details/5
@@ -55,6 +57,7 @@ namespace WebJokes.Controllers
         }
 
         // GET: Jokes/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -65,6 +68,7 @@ namespace WebJokes.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Create([Bind("Id,Question,Answer")] Joke joke)
         {
             if (ModelState.IsValid)
@@ -97,6 +101,7 @@ namespace WebJokes.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Question,Answer")] Joke joke)
         {
             if (id != joke.Id)
@@ -128,6 +133,7 @@ namespace WebJokes.Controllers
         }
 
         // GET: Jokes/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

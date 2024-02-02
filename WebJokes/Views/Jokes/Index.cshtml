@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<WebJokes.Models.Joke>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Jokes";
 }
 
 <h1>Index</h1>
@@ -26,9 +26,6 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Question)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Answer)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
