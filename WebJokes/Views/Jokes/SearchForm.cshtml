@@ -1,0 +1,22 @@
+﻿<h4>Search</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SearchResults">
+         
+            <div class="form-group">
+                <label for="searchPhrase" class="control-label"></label>
+                <input name="searchPhrase" placeholder="Type you phrase..." class="form-control" />
+            </div>
+
+            <div class="form-group my-2">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
